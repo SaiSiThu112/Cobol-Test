@@ -1,0 +1,18 @@
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. REVERSEEXER.
+
+       DATA DIVISION.
+       WORKING-STORAGE SECTION.
+           01 WS-STRING PIC X(15) VALUE 'Hsu Myat Thu'.
+           01 WS-TRIM PIC X(3) VALUE " A ".
+       PROCEDURE DIVISION.
+           REVERSE-STRING.
+              *> MOVE FUNCTION REVERSE ( FUNCTION TRIM (WS-STRING ))
+              *> TO WS-STRING.
+              MOVE FUNCTION REVERSE (WS-STRING) TO WS-STRING
+              MOVE FUNCTION TRIM (WS-TRIM) TO WS-TRIM
+              DISPLAY "REVERSE Process : " WS-STRING
+              DISPLAY "TRIM Process : " WS-TRIM
+
+           STOP RUN.
+       END PROGRAM REVERSEEXER.
